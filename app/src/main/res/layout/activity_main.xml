@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".MainActivity">
 
     <TextView
@@ -27,11 +28,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.044" />
-
 
     <TextView
         android:id="@+id/textView2"
@@ -49,48 +49,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/inter_medium"
         android:text="Angle:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view3" />
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="284dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="208dp"
-        android:background="@drawable/view_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="284dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="148dp"
-        android:background="@drawable/view_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="284dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="96dp"
-        android:background="@drawable/view_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/editTextSide1"
-        android:layout_width="199dp"
-        android:layout_height="45dp"
+        android:layout_width="180dp"
+        android:layout_height="44dp"
         android:layout_marginTop="96dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="68dp"
         android:background="@drawable/edittext_bg"
         android:ems="10"
         android:fontFamily="@font/inter_medium"
@@ -100,12 +74,45 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <EditText
         android:id="@+id/editTextSide2"
-        android:layout_width="208dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="148dp"
+        android:layout_width="176dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="72dp"
+        android:background="@drawable/edittext_bg"
+        android:ems="10"
+        android:fontFamily="@font/inter_medium"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="305dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/view_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:id="@+id/view2"
+        android:layout_width="304dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/view_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextAngle"
+        android:layout_width="174dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="220dp"
         android:layout_marginEnd="72dp"
         android:background="@drawable/edittext_bg"
         android:ems="10"
@@ -116,34 +123,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextAngle"
-        android:layout_width="201dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="208dp"
-        android:layout_marginEnd="80dp"
-        android:background="@drawable/edittext_bg"
-        android:ems="10"
-        android:fontFamily="@font/inter_medium"
-        android:inputType="numberDecimal"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="300dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="220dp"
+        android:background="@drawable/view_bg"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonCalculate"
-        style="@style/Button.White"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="148dp"
-        android:backgroundTintMode="add"
+        android:backgroundTint="@color/black"
         android:fontFamily="@font/inter_medium"
-        android:text="Calculate"
-        android:theme="@style/Button.White"
-        app:cornerRadius="20sp"
         android:onClick="buttonCalculateClick"
+        android:text="Calculate"
+        app:cornerRadius="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:rippleColor="@android:color/transparent" />
@@ -152,11 +153,41 @@
         android:id="@+id/textViewResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="324dp"
-        android:text="Square is"
+        android:layout_marginStart="192dp"
+        android:layout_marginBottom="332dp"
+        android:fontFamily="@font/inter_semibold"
+        android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Result square is"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalculate" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="editTextSide1,view,textView"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="412dp"
+        android:layout_height="138dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-2dp"
+        tools:layout_editor_absoluteY="657dp"></LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
