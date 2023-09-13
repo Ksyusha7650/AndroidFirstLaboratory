@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Find square</string>
+    <string name="app_name">Найди площадь</string>
+    <string name="side_1">Сторона 1 (м):</string>
+    <string name="input_data_of_triangle">Введите данные треугольника</string>
+    <string name="side_2">Сторона 2 (м):</string>
+    <string name="angle">Угол (°):</string>
+    <string name="result_square_is">Результирующая площадь (м^2):</string>
+    <string name="error_angle">Угол должен быть меньше 180°</string>
+    <string name="error">Ошибка!</string>
+    <string name="ok">ОК</string>
+    <string name="compute">Вычислить</string>
 </resources>

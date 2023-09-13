@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void outputErrorDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Error!")
-                .setMessage("Angle must be less than 180°!")
-                .setPositiveButton("OK", (dialog, id) -> dialog.cancel());
+        builder.setTitle(getString(R.string.error))
+                .setMessage(getString(R.string.error_angle))
+                .setPositiveButton(getString(R.string.ok), (dialog, id) -> dialog.cancel());
         builder.show();
     }
 
