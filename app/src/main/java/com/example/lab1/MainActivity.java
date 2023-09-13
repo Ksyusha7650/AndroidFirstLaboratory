@@ -24,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private void outputErrorDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Error!")
-                .setMessage("Something is going wrong! We are already working on it")
+                .setMessage("Angle must be less than 180°!")
                 .setPositiveButton("OK", (dialog, id) -> dialog.cancel());
+        builder.show();
     }
 
     private void connectUIElements() {
@@ -40,17 +41,18 @@ public class MainActivity extends AppCompatActivity {
         A = Double.parseDouble(editTextA.getText().toString());
         B = Double.parseDouble(editTextB.getText().toString());
         angle = Integer.parseInt(editTextAngle.getText().toString());
+        if (angle > 180) throw new ArithmeticException();
     }
 
     public void buttonCalculateClick(View view) {
         try{
             setValuesFromUIElements();
+            double square = getSquare();
+            textViewResult.setText(String.valueOf((double) Math.round(square * 100) / 100)); // с точностью до 2 знаков после запятой
         }
-        catch (Exception exception){
+        catch (ArithmeticException exception){
             outputErrorDialog();
         }
-        double square = getSquare();
-        textViewResult.setText(String.valueOf((double) Math.round(square * 100) / 100)); // с точностью до 2 знаков после запятой
     }
 
     public double getSquare() { // вычисление площади треугольника как произведение двух сторон на синус угла между ними
