@@ -8,148 +8,144 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/inter_medium"
-        android:text="@string/side_1"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
-
-    <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inter_semibold"
         android:text="@string/input_data_of_triangle"
+        android:textAlignment="center"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.37" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="44dp"
-        android:fontFamily="@font/inter_semibold"
-        android:text="@string/result_square_is"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalculate" />
-
-    <TextView
-        android:id="@+id/textViewResult"
-        android:layout_width="75dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginBottom="192dp"
-        android:fontFamily="@font/inter_semibold"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/inter_medium"
-        android:text="@string/side_2"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view2" />
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/inter_medium"
-        android:text="@string/angle"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view3" />
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="311dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="280dp"
-        android:background="@drawable/view_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/view2"
-        android:layout_width="311dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="184dp"
-        android:background="@drawable/view_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="321dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="96dp"
-        android:background="@drawable/view_bg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonCalculate"
-        android:layout_width="150dp"
+        android:layout_width="175dp"
         android:layout_height="59dp"
-        android:layout_marginTop="416dp"
-        android:layout_marginEnd="128dp"
         android:backgroundTint="@color/black"
         android:fontFamily="@font/inter_medium"
         android:onClick="buttonCalculateClick"
         android:text="@string/compute"
         android:textSize="18sp"
         app:cornerRadius="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.527"
         app:rippleColor="@android:color/transparent" />
 
-
-    <EditText
-        android:id="@+id/editTextAngle"
-        android:layout_width="133dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="284dp"
-        android:layout_marginEnd="60dp"
-        android:background="@drawable/edittext_bg"
-        android:ems="10"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/inter_medium"
-        android:inputType="numberDecimal"
-        android:text="0"
-        android:textAlignment="viewStart"
-        android:textColor="@color/black"
+        android:text="@string/side_1"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.475" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/result_square_is"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCalculate"
+        app:layout_constraintVertical_bias="0.003" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="75dp"
+        android:layout_height="43dp"
+        android:fontFamily="@font/inter_semibold"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/side_2"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/angle"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:layout_constraintVertical_bias="0.512" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="311dp"
+        android:layout_height="67dp"
+        android:background="@drawable/view_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.396" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="311dp"
+        android:layout_height="66dp"
+        android:background="@drawable/view_bg"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.512" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="311dp"
+        android:layout_height="66dp"
+        android:background="@drawable/view_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16" />
 
     <EditText
         android:id="@+id/editTextSide1"
-        android:layout_width="144dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="52dp"
+        android:layout_width="152dp"
+        android:layout_height="55dp"
         android:background="@drawable/edittext_bg"
         android:ems="10"
         android:fontFamily="@font/inter_medium"
@@ -158,15 +154,17 @@
         android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.454" />
 
     <EditText
         android:id="@+id/editTextSide2"
-        android:layout_width="143dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="52dp"
+        android:layout_width="152dp"
+        android:layout_height="55dp"
         android:background="@drawable/edittext_bg"
         android:ems="10"
         android:fontFamily="@font/inter_medium"
@@ -175,8 +173,31 @@
         android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <EditText
+        android:id="@+id/editTextAngle"
+        android:layout_width="152dp"
+        android:layout_height="55dp"
+        android:background="@drawable/edittext_bg"
+        android:ems="10"
+        android:fontFamily="@font/inter_medium"
+        android:inputType="numberDecimal"
+        android:text="0"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:layout_constraintVertical_bias="0.583" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
