@@ -5,4 +5,6 @@
     <color name="background_textbox">#99D6D6D7</color>
     <color name="bg_teditText">#99D9D2B8</color>
     <color name="fontcolor_editText">#202020</color>
+    <color name="bgButton">#FF000000</color>
+    <color name="textColor">#FF000000</color>
 </resources>

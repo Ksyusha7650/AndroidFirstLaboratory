@@ -14,7 +14,7 @@
         android:fontFamily="@font/inter_semibold"
         android:text="@string/input_data_of_triangle"
         android:textAlignment="center"
-        android:textSize="22sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -27,7 +27,7 @@
         android:id="@+id/buttonCalculate"
         android:layout_width="175dp"
         android:layout_height="59dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/bgButton"
         android:fontFamily="@font/inter_medium"
         android:onClick="buttonCalculateClick"
         android:text="@string/compute"
@@ -35,9 +35,10 @@
         app:cornerRadius="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527"
+        app:layout_constraintVertical_bias="0.713"
         app:rippleColor="@android:color/transparent" />
 
     <TextView
@@ -64,10 +65,9 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalculate"
-        app:layout_constraintVertical_bias="0.003" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.807" />
 
     <TextView
         android:id="@+id/textViewResult"
@@ -112,18 +112,17 @@
     <View
         android:id="@+id/view3"
         android:layout_width="311dp"
-        android:layout_height="67dp"
+        android:layout_height="50dp"
         android:background="@drawable/view_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view2"
         android:layout_width="311dp"
-        android:layout_height="66dp"
+        android:layout_height="50dp"
         android:background="@drawable/view_bg"
         app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,13 +133,13 @@
     <View
         android:id="@+id/view"
         android:layout_width="311dp"
-        android:layout_height="66dp"
+        android:layout_height="50dp"
         android:background="@drawable/view_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <EditText
         android:id="@+id/editTextSide1"
@@ -152,7 +151,7 @@
         android:inputType="numberDecimal"
         android:text="0"
         android:textAlignment="viewStart"
-        android:textColor="@color/black"
+        android:textColor="@color/textColor"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
@@ -171,7 +170,7 @@
         android:inputType="numberDecimal"
         android:text="0"
         android:textAlignment="viewStart"
-        android:textColor="@color/black"
+        android:textColor="@color/textColor"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
@@ -190,7 +189,7 @@
         android:inputType="numberDecimal"
         android:text="0"
         android:textAlignment="viewStart"
-        android:textColor="@color/black"
+        android:textColor="@color/textColor"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="@+id/view3"

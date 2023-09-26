@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         connectUIElements();
     }
 
-    private void outputErrorDialog() {
+    private void outputErrorDialog(String errorText) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(getString(R.string.error))
-                .setMessage(getString(R.string.error_angle))
+                .setMessage(errorText)
                 .setPositiveButton(getString(R.string.ok), (dialog, id) -> dialog.cancel());
         builder.show();
     }
@@ -41,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
         A = Double.parseDouble(editTextA.getText().toString());
         B = Double.parseDouble(editTextB.getText().toString());
         angle = Integer.parseInt(editTextAngle.getText().toString());
-        if (angle > 180) throw new ArithmeticException();
+        if (angle >= 180) throw new ArithmeticException(getString(R.string.error_angle));
+        if (A == 0) throw new ArithmeticException(getString(R.string.error_side));
+        if (B == 0) throw new ArithmeticException(getString(R.string.error_side));
+        if (angle == 0) throw new ArithmeticException(getString(R.string.error_angle));
     }
 
     public void buttonCalculateClick(View view) {
@@ -50,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
             double square = getSquare();
             textViewResult.setText(String.valueOf((double) Math.round(square * 100) / 100)); // с точностью до 2 знаков после запятой
         }
-        catch (ArithmeticException exception){
-            outputErrorDialog();
+        catch (ArithmeticException | NumberFormatException exception){
+            outputErrorDialog(exception.getMessage());
         }
     }
 
