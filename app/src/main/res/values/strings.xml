@@ -7,6 +7,9 @@
     <string name="result_square_is"> Площадь треугольника, м^2:</string>
     <string name="error_side">Стороны треугольника должны быть больше 0 </string>
     <string name="error_angle">Угол должен быть больше 0 и меньше 180°</string>
+    <string name="error_empty_field_a">Не введена 1-ая сторона</string>
+    <string name="error_empty_field_b">Не введена 2-ая сторона</string>
+    <string name="error_empty_field_angle">Не введен угол</string>
     <string name="error">Ошибка!</string>
     <string name="ok">ОК</string>
     <string name="compute">Вычислить</string>
