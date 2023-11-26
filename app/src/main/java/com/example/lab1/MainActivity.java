@@ -11,9 +11,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.net.URL;
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
     EditText editTextA, editTextB, editTextAngle;
     TextView textViewResult;
+    Data data = null;
     double A, B, angle; // две стороны и угол треугольника
 
     @Override
@@ -38,44 +42,26 @@ public class MainActivity extends AppCompatActivity {
         textViewResult = findViewById(R.id.textViewResult);
     }
 
-    private void setValuesFromUIElements(){
-        String textA = editTextA.getText().toString();
-        String textB = editTextB.getText().toString();
-        String textAngle = editTextAngle.getText().toString();
-
-        if (textA.isEmpty()) {
-            throw new ArithmeticException(getString(R.string.error_empty_field_a)); // выбрасывает исключение, если сторона A не введена
-        }
-
-        if (textB.isEmpty()) {
-            throw new ArithmeticException(getString(R.string.error_empty_field_b)); // выбрасывает исключение, если сторона B не введена
-        }
-
-        if (textAngle.isEmpty()) {
-            throw new ArithmeticException(getString(R.string.error_empty_field_angle)); // выбрасывает исключение, если угол не введен
-        }
-
-        A = Double.parseDouble(textA);
-        B = Double.parseDouble(textB);
-        angle = Integer.parseInt(textAngle);
-        if (angle >= 180) throw new ArithmeticException(getString(R.string.error_angle)); // выбрасывает исключение, если угол >= 180
-        if (A == 0) throw new ArithmeticException(getString(R.string.error_side)); // выбрасывает исключение, если сторона A равна 0
-        if (B == 0) throw new ArithmeticException(getString(R.string.error_side)); // выбрасывает исключение, если сторона B равна 0
-        if (angle == 0) throw new ArithmeticException(getString(R.string.error_angle)); // выбрасывает исключение, если угол равен 0
-    }
 
     public void buttonCalculateClick(View view) {
-        try{
-            setValuesFromUIElements(); // задает значения переменных A, B, angle на основе введенных пользователем данных
-            double square = getSquare(); // вычисляет площадь треугольника
-            textViewResult.setText(String.valueOf((double) Math.round(square * 100) / 100)); // выводит результат на экран с округлением до 2 знаков после запятой
+        String URL = "https://worldlab.technolog.edu.ru/stud/group3/laboratory_4.php?side1=" + editTextA.getText().toString()
+                + "&side2=" + editTextB.getText().toString() + "&angle=" + editTextAngle.getText().toString();
+        try {
+            CalculateRunnable target = new CalculateRunnable(new URL(URL));
+            Thread process = new Thread(target);
+            process.start();
+            process.join();
+            data = target.getData();
+
+        } catch (Exception exception){
+            //outputErrorDialog(exception.getMessage()); // выводит диалоговое окно с сообщением об ошибке
         }
-        catch (ArithmeticException | NumberFormatException exception){
-            outputErrorDialog(exception.getMessage()); // выводит диалоговое окно с сообщением об ошибке
+
+        if (!Objects.equals(data.getError(), "")) {
+            outputErrorDialog(data.getError());
+        } else {
+            textViewResult.setText(data.getSquare());
         }
     }
 
-    public double getSquare() { // вычисление площади треугольника как произведение двух сторон на синус угла между ними
-        return (double)1/2 * A * B * Math.sin(Math.toRadians(angle));
-    }
 }
