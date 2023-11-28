@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Найди площадь</string>
+    <string name="app_name">Найди площадь сервер</string>
     <string name="side_1">Сторона 1, м:</string>
     <string name="input_data_of_triangle">Введите данные треугольника</string>
     <string name="side_2">Сторона 2, м:</string>
