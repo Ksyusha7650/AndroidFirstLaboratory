@@ -1,6 +1,6 @@
 package com.example.lab1;
 
-public class Data {
+public class ServerData {
     private final String square;
     private final String error;
 
@@ -12,7 +12,7 @@ public class Data {
         return error;
     }
 
-    public Data(String square, String error) {
+    public ServerData(String square, String error) {
         this.square = square;
         this.error = error;
     }

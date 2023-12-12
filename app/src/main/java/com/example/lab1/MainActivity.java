@@ -1,11 +1,8 @@
 package com.example.lab1;
 
-import static com.google.android.material.internal.ContextUtils.getActivity;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -17,7 +14,7 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
     EditText editTextA, editTextB, editTextAngle;
     TextView textViewResult;
-    Data data = null;
+    ServerData data = null;
     double A, B, angle; // две стороны и угол треугольника
 
     @Override
@@ -44,24 +41,41 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void buttonCalculateClick(View view) {
-        String URL = "https://worldlab.technolog.edu.ru/stud/group3/laboratory_4.php?side1=" + editTextA.getText().toString()
-                + "&side2=" + editTextB.getText().toString() + "&angle=" + editTextAngle.getText().toString();
+        // Формирование URL-адреса запроса с использованием введенных значений
+        String URL = getString(R.string.htpps_request,editTextA.getText().toString(), editTextB.getText().toString(), editTextAngle.getText().toString());
         try {
+            // Создание объекта CalculateRunnable с указанным URL-адресом
             CalculateRunnable target = new CalculateRunnable(new URL(URL));
+
+            // Создание нового потока и запуск выполнения Runnable
             Thread process = new Thread(target);
             process.start();
+
+            // Ожидание завершения потока
             process.join();
+
+            // Получение данных из CalculateRunnable
             data = target.getData();
 
         } catch (Exception exception){
-            //outputErrorDialog(exception.getMessage()); // выводит диалоговое окно с сообщением об ошибке
+            //NOP
+        }
+
+        // Проверяем наличие данных
+        if (data == null) {
+            // Если данных нет, выводим диалоговое окно с сообщением о ошибке сервера
+            outputErrorDialog(getString(R.string.server_error));
+            return;
         }
 
         if (!Objects.equals(data.getError(), "")) {
+            // Если есть ошибка в данных, выводим диалоговое окно с сообщением об ошибке
             outputErrorDialog(data.getError());
         } else {
+            // Выводим результат на экран
             textViewResult.setText(data.getSquare());
         }
     }
+
 
 }

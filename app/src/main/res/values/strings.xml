@@ -13,4 +13,6 @@
     <string name="error">Ошибка!</string>
     <string name="ok">ОК</string>
     <string name="compute">Вычислить</string>
+    <string name="server_error">Ошибка на сервере!</string>
+    <string name="htpps_request">https://worldlab.technolog.edu.ru/stud/group3/laboratory_4.php?side1=%1$s&amp;side2=%2$s&amp;angle=%3$s</string>
 </resources>
