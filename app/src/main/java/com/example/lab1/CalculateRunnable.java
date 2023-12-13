@@ -7,8 +7,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
 
 public class CalculateRunnable implements Runnable {
     public static final int TIMEOUT = 3000;
@@ -29,13 +30,13 @@ public class CalculateRunnable implements Runnable {
     public void run() {
         String line = "";
 
-        HttpURLConnection connection = null;
+        HttpsURLConnection connection = null;
 
         InputStream stream = null;
         BufferedReader reader = null;
         try {
             // Устанавливаем соединение с сервером и задаем таймауты
-            connection = (HttpURLConnection) url.openConnection();
+            connection = (HttpsURLConnection) url.openConnection();
             connection.setReadTimeout(TIMEOUT);
             connection.setConnectTimeout(TIMEOUT);
             connection.connect();
