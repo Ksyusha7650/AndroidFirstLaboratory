@@ -42,7 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonCalculateClick(View view) {
         // Формирование URL-адреса запроса с использованием введенных значений
-        String URL = getString(R.string.htpps_request,editTextA.getText().toString(), editTextB.getText().toString(), editTextAngle.getText().toString());
+        if (!editTextA.getText().toString().equals("") && !editTextB.getText().toString().equals("")) {
+            if (Double.parseDouble(editTextA.getText().toString()) > 1000)
+                editTextA.setText("1000");
+            if (Double.parseDouble(editTextB.getText().toString()) > 1000)
+                editTextB.setText("1000");
+        }
+        String URL = getString(R.string.htpps_request, editTextA.getText().toString(), editTextB.getText().toString(), editTextAngle.getText().toString());
         try {
             // Создание объекта CalculateRunnable с указанным URL-адресом
             CalculateRunnable target = new CalculateRunnable(new URL(URL));

@@ -71,8 +71,8 @@
 
     <TextView
         android:id="@+id/textViewResult"
-        android:layout_width="75dp"
-        android:layout_height="43dp"
+        android:layout_width="334dp"
+        android:layout_height="87dp"
         android:fontFamily="@font/inter_semibold"
         android:textAlignment="center"
         android:textSize="20sp"
